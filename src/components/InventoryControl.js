@@ -9,20 +9,20 @@ class InventoryControl extends React.Component {
     this.state = {
       formVisible: false,
       mainCoffeeList: [
-        {
-          name: "Bridge Blend",
-          roast: "Light Roast",
-          origin: "Indonesia, Africa",
-          price: "$16.99",
-          inventory: "130"
-        },
-        {
-          name: "Colombia direct trade",
-          roast: "Medium Roast",
-          origin: "Colombia",
-          price: "$19.99",
-          inventory: "130"
-        }
+        // {
+        //   name: "Bridge Blend",
+        //   roast: "Light Roast",
+        //   origin: "Indonesia, Africa",
+        //   price: "$16.99",
+        //   inventory: "130"
+        // },
+        // {
+        //   name: "Colombia direct trade",
+        //   roast: "Medium Roast",
+        //   origin: "Colombia",
+        //   price: "$19.99",
+        //   inventory: "130"
+        // }
       ]
     };
   }
@@ -33,13 +33,22 @@ class InventoryControl extends React.Component {
     }));
   }
 
+  handleAddingNewCoffee = (newCoffee) => {
+    const newMainCoffeeList = this.state.mainCoffeeList.concat(newCoffee);
+
+    this.setState({
+      mainCoffeeList: newMainCoffeeList,
+      formVisible: false
+    });
+  }
+
   render(){
 
     let currentState = null;
     let buttonText = null;
 
     if (this.state.formVisible) {
-      currentState = <NewCoffeeForm />;
+      currentState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewCoffee}/>;
       buttonText = "Back to Coffee List"
     } else {
       currentState = <CoffeeList coffeeList={this.state.mainCoffeeList} />
