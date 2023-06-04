@@ -44,13 +44,22 @@ class InventoryControl extends React.Component {
     });
   }
 
+  handleDeletingCoffee = (id) => {
+    const newMainCoffeeList = this.state.mainCoffeeList.filter(coffee => coffee.id !==id);
+
+    this.setState ({
+      mainCoffeeList: newMainCoffeeList,
+      selectedCoffee: null
+    });
+  }
+
   render(){
 
     let currentState = null;
     let buttonText = null;
 
     if (this.state.selectedCoffee != null) {
-      currentState = <CoffeeDetail coffee = {this.state.selectedCoffee} />
+      currentState = <CoffeeDetail coffee = {this.state.selectedCoffee} onClickingDelete = {this.handleDeletingCoffee} />
       buttonText = "Back to Coffee List";
     } else if (this.state.formVisible) {
       currentState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewCoffee}/>;
