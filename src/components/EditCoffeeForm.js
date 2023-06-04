@@ -18,8 +18,8 @@ function EditCoffeeForm (props) {
   return (
     <>
       <ReusableForm
-        buttonText="Update Coffee" 
-        formSubmissionHandler={handleEditFormSubmission}/>
+        formSubmissionHandler={handleEditFormSubmission}
+        buttonText="Update Coffee" />
     </>
   );
 }

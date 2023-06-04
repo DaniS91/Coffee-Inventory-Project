@@ -20,7 +20,8 @@ class InventoryControl extends React.Component {
     if (this.state.selectedCoffee != null) {
       this.setState({
         formVisible: false,
-        selectedCoffee: null
+        selectedCoffee: null,
+        editing: false
       });
     } else {
       this.setState(prevState => ({
