@@ -28,8 +28,7 @@ function CoffeeList(props){
         origin={coffee.origin}
         roast={coffee.roast}
         price={coffee.price}
-        inventory={coffee.inventory}
-        key={index} />
+        inventory={coffee.inventory}/>
     )}
     </>
   );

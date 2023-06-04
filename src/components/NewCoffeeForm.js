@@ -1,13 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { v4 } from "uuid";
 
 function NewCoffeeForm(props){
 
   function handleNewCoffee(event) {
     event.preventDefault();
-    console.log(event.target.name.value);
-    console.log(event.target.origin.value);
-    console.log(event.target.roast.value);
-    console.log(event.target.price.value);
+    props.onNewCoffeeCreation({
+      name: event.target.name.value,
+      origin: event.target.origin.value,
+      roast: event.target.roast.value,
+      price: parseInt(event.target.price.value),
+      inventory: 130,
+      id: v4()
+    })
   }
 
   return (
@@ -38,5 +44,9 @@ function NewCoffeeForm(props){
     </React.Fragment>
   );
 }
+
+NewCoffeeForm.propTypes = {
+  onNewCoffeeCreation: PropTypes.func
+};
 
 export default NewCoffeeForm;
