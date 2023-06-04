@@ -10,7 +10,8 @@ class InventoryControl extends React.Component {
     this.state = {
       formVisible: false,
       mainCoffeeList: [],
-      selectedCoffee: null
+      selectedCoffee: null,
+      editing: false
     };
   }
 
@@ -25,6 +26,11 @@ class InventoryControl extends React.Component {
         formVisible: !prevState.formVisible,
       }));
     }
+  }
+
+  handleEditClick = () => {
+    console.log("handleditclick reached");
+    this.setState({editing: true});
   }
 
   handleAddingNewCoffee = (newCoffee) => {
@@ -59,7 +65,11 @@ class InventoryControl extends React.Component {
     let buttonText = null;
 
     if (this.state.selectedCoffee != null) {
-      currentState = <CoffeeDetail coffee = {this.state.selectedCoffee} onClickingDelete = {this.handleDeletingCoffee} />
+      currentState = 
+      <CoffeeDetail 
+        coffee = {this.state.selectedCoffee}
+        onClickingDelete = {this.handleDeletingCoffee}
+        onClickingEdit = {this.handleEditClick} />
       buttonText = "Back to Coffee List";
     } else if (this.state.formVisible) {
       currentState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewCoffee}/>;
