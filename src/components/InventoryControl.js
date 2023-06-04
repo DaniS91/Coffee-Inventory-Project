@@ -7,7 +7,23 @@ class InventoryControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisible: false
+      formVisible: false,
+      mainCoffeeList: [
+        {
+          name: "Bridge Blend",
+          roast: "Light Roast",
+          origin: "Indonesia, Africa",
+          price: "$16.99",
+          inventory: "130"
+        },
+        {
+          name: "Colombia direct trade",
+          roast: "Medium Roast",
+          origin: "Colombia",
+          price: "$19.99",
+          inventory: "130"
+        }
+      ]
     };
   }
 
@@ -26,7 +42,7 @@ class InventoryControl extends React.Component {
       currentState = <NewCoffeeForm />;
       buttonText = "Back to Coffee List"
     } else {
-      currentState = <CoffeeList />
+      currentState = <CoffeeList coffeeList={this.state.mainCoffeeList} />
       buttonText = "Add New Coffee"
     }
     return (
