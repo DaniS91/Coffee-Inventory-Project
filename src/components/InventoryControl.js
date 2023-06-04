@@ -11,17 +11,28 @@ class InventoryControl extends React.Component {
     };
   }
 
+  handleClick = () => {
+    this.setState(prevState => ({
+      formVisible: !prevState.formVisible
+    }));
+  }
+
   render(){
 
     let currentState = null;
+    let buttonText = null;
+
     if (this.state.formVisible) {
-      currentState = <NewCoffeeForm />
+      currentState = <NewCoffeeForm />;
+      buttonText = "Back to Coffee List"
     } else {
       currentState = <CoffeeList />
+      buttonText = "Add New Coffee"
     }
     return (
       <React.Fragment>
         {currentState}
+        <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }
