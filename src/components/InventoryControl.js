@@ -1,6 +1,7 @@
 import React from 'react';
 import NewCoffeeForm from './NewCoffeeForm';
 import CoffeeList from './CoffeeList';
+import CoffeeDetail from './CoffeeDetail'
 
 class InventoryControl extends React.Component {
 
@@ -8,22 +9,8 @@ class InventoryControl extends React.Component {
     super(props);
     this.state = {
       formVisible: false,
-      mainCoffeeList: [
-        // {
-        //   name: "Bridge Blend",
-        //   roast: "Light Roast",
-        //   origin: "Indonesia, Africa",
-        //   price: "$16.99",
-        //   inventory: "130"
-        // },
-        // {
-        //   name: "Colombia direct trade",
-        //   roast: "Medium Roast",
-        //   origin: "Colombia",
-        //   price: "$19.99",
-        //   inventory: "130"
-        // }
-      ]
+      mainCoffeeList: [],
+      selectedCoffee: null
     };
   }
 
@@ -42,17 +29,28 @@ class InventoryControl extends React.Component {
     });
   }
 
+  handleSelectingCoffee = (id) => {
+    const selectedCoffee = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];
+    
+    this.setState({
+      selectedCoffee: selectedCoffee
+    });
+  }
+
   render(){
 
     let currentState = null;
     let buttonText = null;
 
-    if (this.state.formVisible) {
+    if (this.state.selectedCoffee != null) {
+      currentState = <CoffeeDetail coffee = {this.state.selectedCoffee} />
+      buttonText = "Back to Coffee List";
+    } else if (this.state.formVisible) {
       currentState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewCoffee}/>;
-      buttonText = "Back to Coffee List"
+      buttonText = "Back to Coffee List";
     } else {
       currentState = <CoffeeList coffeeList={this.state.mainCoffeeList} />
-      buttonText = "Add New Coffee"
+      buttonText = "Add New Coffee";
     }
     return (
       <React.Fragment>
