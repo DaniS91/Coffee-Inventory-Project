@@ -2,7 +2,7 @@ import React from "react";
 
 function Header(){
   return (
-    <h1>Dani's Coffee Roasting Company</h1>
+    <h1>Sweet Beans Coffee Roasters</h1>
   );
 }
 
