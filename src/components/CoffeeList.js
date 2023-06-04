@@ -7,18 +7,22 @@ function CoffeeList(props){
     <>
     <hr/>
     {props.coffeeList.map((coffee, index) =>
-      <Coffee name={coffee.name}
+      <Coffee 
+        whenCoffeeIsClicked = { props.onCoffeeSelection }
+        name={coffee.name}
         origin={coffee.origin}
         roast={coffee.roast}
         price={coffee.price}
-        inventory={coffee.inventory}/>
+        inventory={coffee.inventory}
+        id={coffee.id}/>
     )}
     </>
   );
 }
 
 CoffeeList.propTypes = {
-  coffeeList: PropTypes.array
+  coffeeList: PropTypes.array,
+  onCoffeeSelection: PropTypes.func
 };
 
 export default CoffeeList;
