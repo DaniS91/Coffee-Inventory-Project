@@ -13,8 +13,6 @@ class InventoryControl extends React.Component {
       mainCoffeeList: [],
       selectedCoffee: null,
       editing: false,
-      // coffeeInventory: coffee.inventory
-      //this does not work and I have no idea how to do this
     };
   }
 
@@ -32,6 +30,9 @@ class InventoryControl extends React.Component {
     }
   }
 
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
   handleAddingNewCoffee = (newCoffee) => {
     const newMainCoffeeList = this.state.mainCoffeeList.concat(newCoffee);
 
@@ -58,7 +59,6 @@ class InventoryControl extends React.Component {
       editing: false,
       selectedCoffee: null
     });
-    //this doesn't edit the coffee details that show on the detail page, it only shows in the list?
   }
 
   handleDeletingCoffee = (id) => {
@@ -68,21 +68,6 @@ class InventoryControl extends React.Component {
       mainCoffeeList: newMainCoffeeList,
       selectedCoffee: null
     });
-  }
-
-
-  //I have no idea how to accomplish this, this is my best guess so far
-  handleSellingCoffee = (id) => {
-    // let updatedCoffeeInventory = {...this.state.coffeeInventory}
-    // if(updatedCoffeeInventory === 0 ) {
-    //   updatedCoffeeInventory = 0
-    // } else {
-    //   updatedCoffeeInventory -= 1;
-    // }
-    // this.setState ({
-    //   coffeeInventory: updatedCoffeeInventory
-    // })
-   
   }
 
   render(){
@@ -101,8 +86,7 @@ class InventoryControl extends React.Component {
       <CoffeeDetail 
         coffee = {this.state.selectedCoffee}
         onClickingDelete = {this.handleDeletingCoffee}
-        onClickingEdit = {this.handleEditClick}
-        onClickingSell = {this.handleSellingCoffee} />
+        onClickingEdit = {this.handleEditClick} />
       buttonText = "Back to Coffee List";
     } else if (this.state.formVisible) {
       currentState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewCoffee}/>;
@@ -118,7 +102,6 @@ class InventoryControl extends React.Component {
       </React.Fragment>
     );
   }
-
 }
 
 export default InventoryControl;
