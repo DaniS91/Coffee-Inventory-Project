@@ -2,6 +2,7 @@ import React from 'react';
 import NewCoffeeForm from './NewCoffeeForm';
 import CoffeeList from './CoffeeList';
 import CoffeeDetail from './CoffeeDetail'
+import EditCoffeeForm from "./EditCoffeeForm";
 
 class InventoryControl extends React.Component {
 
@@ -50,6 +51,17 @@ class InventoryControl extends React.Component {
     });
   }
 
+  handleEditingCoffee = (coffeeToEdit) => {
+    const editedMainCoffeeList = this.state.mainCoffeeList
+                                     .filter(coffee => coffee.id !== this.state.selectedCoffee.id)
+                                     .concat(coffeeToEdit);
+    this.setState({
+      mainCoffeeList: editedMainCoffeeList,
+      editing: false,
+      selectedCofee: null
+    });
+  }
+
   handleDeletingCoffee = (id) => {
     const newMainCoffeeList = this.state.mainCoffeeList.filter(coffee => coffee.id !==id);
 
@@ -64,7 +76,13 @@ class InventoryControl extends React.Component {
     let currentState = null;
     let buttonText = null;
 
-    if (this.state.selectedCoffee != null) {
+    if (this.state.editing) {
+      currentState = 
+      <EditCoffeeForm 
+        coffee = {this.state.selectedCoffee}
+        onEditCoffee = {this.handleEditingCoffee} />
+      buttonText = "Return to Coffee List";
+    } else if (this.state.selectedCoffee != null) {
       currentState = 
       <CoffeeDetail 
         coffee = {this.state.selectedCoffee}
