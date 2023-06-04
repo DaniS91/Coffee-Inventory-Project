@@ -7,8 +7,8 @@ function Coffee(props){
       <h3>{props.name}</h3>
       <p>Origin: {props.origin}</p>
       <p>{props.roast}</p>
-      <p>{props.price}</p>
-      <p>{props.inventory}</p>
+      <p>${props.price} per pound</p>
+      <p>{props.inventory} pounds remaining</p>
       <hr/>
     </React.Fragment>
   );
