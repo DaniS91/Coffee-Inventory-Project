@@ -6,7 +6,7 @@ function CoffeeList(props){
   return (
     <>
     <hr/>
-    {props.coffeeList.map((coffee, index) =>
+    {props.coffeeList.map((coffee) =>
       <Coffee 
         whenCoffeeIsClicked = { props.onCoffeeSelection }
         name={coffee.name}
