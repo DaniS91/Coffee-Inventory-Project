@@ -1,11 +1,12 @@
 import React from "react";
 
-function Coffee(){
-  const name = "Bridge Blend";
+function Coffee(props){
   return (
     <React.Fragment>
-      <h3>{name}</h3>
-      <p>first coffee added</p>
+      <h3>{props.name}</h3>
+      <p>Origin: {props.origin}</p>
+      <p>{props.roast}</p>
+      <p>{props.price}</p>
       <hr/>
     </React.Fragment>
   );
