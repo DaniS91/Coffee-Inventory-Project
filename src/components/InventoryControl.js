@@ -13,6 +13,7 @@ class InventoryControl extends React.Component {
       mainCoffeeList: [],
       selectedCoffee: null,
       editing: false,
+      inventory: 130
     };
   }
 
@@ -70,7 +71,21 @@ class InventoryControl extends React.Component {
     });
   }
 
-  render(){
+  handleSellingCoffee = () => {
+    if (this.state.inventory <= 0) {
+      let newCoffeeInventory = 0;
+      this.setState ({
+        inventory: newCoffeeInventory
+      });
+    } else {
+      let newCoffeeInventory = this.state.inventory -1;
+      this.setState ({
+        inventory: newCoffeeInventory
+      });
+    }
+  }
+
+  render() {
 
     let currentState = null;
     let buttonText = null;
@@ -85,6 +100,8 @@ class InventoryControl extends React.Component {
       currentState = 
       <CoffeeDetail 
         coffee = {this.state.selectedCoffee}
+        inventory = {this.state.inventory}
+        onClickingSell = {this.handleSellingCoffee}
         onClickingDelete = {this.handleDeletingCoffee}
         onClickingEdit = {this.handleEditClick} />
       buttonText = "Back to Coffee List";
@@ -101,7 +118,7 @@ class InventoryControl extends React.Component {
         <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
-  }
+  };
 }
 
 export default InventoryControl;
