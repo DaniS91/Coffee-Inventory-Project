@@ -12,7 +12,7 @@
 * _React_
 
 ## Project Description
-This is a React application for tracking and managing inventory for a coffee shop. Each coffee is received in 130 pound burlap sacks, and the application should track the remaining pounds of any particular coffee after a sale of that coffee. This application in its current state, at time of submission, implements create and read functionality. It will eventually include update and delete functionality as well. 
+This is a React application for tracking and managing inventory for a coffee shop. Each coffee is received in 130 pound burlap sacks, and the application should track the remaining pounds of any particular coffee after a sale of that coffee. This application implements full CRUD functionality, and an inventory-tracking capability of sorts. For inventory tracking, each coffee arrives at the roastery in 130 lb burlap sacks-very specific-and the user should be able to press a button the coffee's detail page that decreases the remaining inventory by 1 pound for each press of the button, until the remaining inventory reaches 0.
 
 ![Project Diagram](./src/img/component-diagram.png)
 
@@ -25,8 +25,9 @@ This is a React application for tracking and managing inventory for a coffee sho
 * to be able to click a button to sell a pound of coffee beans. This should decrease the number of pounds left by 1. The number of pounds in a sack of coffee beans should not be able to go below 0
 
 ## Known Bugs
-* CRUD functionality is complete and error-free, but inventory tracker using a sell button is incomplete
-* unsure how to proceed with decreasing coffee inventory from coffeedetail page button
+* the coffee price initially started as a number, but due to repeated annoying errors, I changed it to a string input. My plan is to correct the input and parse it correctly from a number input to a string in display
+ 
+* I'm not super happy with the functionality that decreases the remaining inventory, but it works!
 
 ## Setup/Installation Requirements
 
