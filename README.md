@@ -12,7 +12,7 @@
 * _React_
 
 ## Project Description
-This is a React application for tracking and managing inventory for a coffee shop. Each coffee is received in 130 pound burlap sacks, and the application should track the remaining pounds of any particular coffee after a sale of that coffee. This application implements full CRUD functionality, and an inventory-tracking capability of sorts. For inventory tracking, each coffee arrives at the roastery in 130 lb burlap sacks-very specific-and the user should be able to press a button the coffee's detail page that decreases the remaining inventory by 1 pound for each press of the button, until the remaining inventory reaches 0.
+This is a React application for tracking and managing inventory for a coffee shop. This application implements full CRUD functionality, and an inventory-tracking capability of sorts. For inventory tracking, each coffee arrives at the roastery in 130 lb burlap sacks-very specific-and the user should be able to press a button the coffee's detail page that decreases the remaining inventory by 1 pound for each press of the button, until the remaining inventory reaches 0.
 
 ![Project Diagram](./src/img/component-diagram.png)
 
