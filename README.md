@@ -1,6 +1,6 @@
 # Bean Counter
 
-#### By Dani Steely
+### By Dani Steely
 
 #### [Epicodus][Epicodus] project completed during [React][React] curriculum, after chapters on [React Fundamentals][React Fun]. Project is an application in React that tracks inventory for a coffee business.
 
@@ -26,8 +26,6 @@ This is a React application for tracking and managing inventory for a coffee sho
 
 ## Known Bugs
 * the coffee price initially started as a number, but due to repeated annoying errors, I changed it to a string input. My plan is to correct the input and parse it correctly from a number input to a string in display
- 
-* I'm not super happy with the functionality that decreases the remaining inventory, but it works!
 
 ## Setup/Installation Requirements
 

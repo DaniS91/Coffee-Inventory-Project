@@ -14,7 +14,6 @@ class InventoryControl extends React.Component {
       selectedCoffee: null,
       editing: false,
       coffeeToBeSold: null,
-      // inventory: 130
     };
   }
 
@@ -46,8 +45,6 @@ class InventoryControl extends React.Component {
 
   handleSelectingCoffee = (id) => {
     const selectedCoffee = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];
-    console.log("handleselectingcoffee");
-    console.log(selectedCoffee.id);
     this.setState({
       selectedCoffee: selectedCoffee
     });
@@ -73,37 +70,14 @@ class InventoryControl extends React.Component {
     });
   }
 
-  // handleSellingCoffee = (id) => {
-  //   const coffeeToBeSold = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];
-  //   console.log("handleselectingcoffee");
-  //   console.log(coffeeToBeSold.id);
-  //   console.log(coffeeToBeSold.inventory);
-  //   if (this.state.inventory <= 0) {
-  //     let newCoffeeInventory = 0;
-  //     this.setState ({
-  //       inventory: newCoffeeInventory
-  //     });
-  //   } else {
-  //     let newCoffeeInventory = this.state.inventory -1;
-  //     this.setState ({
-  //       inventory: newCoffeeInventory
-  //     });
-  //   }
-  // }
-
   handleSellingCoffee = (id) => {
     const coffeeToBeSold = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];
-    console.log("handleselectingcoffee");
-    console.log(coffeeToBeSold.id);
-    console.log(coffeeToBeSold.inventory);
     if (coffeeToBeSold.inventory <= 0) {
       let newCoffeeInventory = 0;
       coffeeToBeSold.inventory = newCoffeeInventory;
-      console.log("first if statement reached");
     } else {
       let newCoffeeInventory = coffeeToBeSold.inventory -1;
       coffeeToBeSold.inventory = newCoffeeInventory;
-      console.log("second if statement reached");
     }
     const updatedMainCoffeeList = this.state.mainCoffeeList
                                      .filter(coffee => coffee.id !== this.state.selectedCoffee.id)
