@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import './../divhover.css'
 
 function Coffee(props){
 
@@ -27,7 +27,7 @@ function Coffee(props){
   }
   return (
     <React.Fragment>
-      <div style={coffeeDivStyles} onClick = {() => props.whenCoffeeIsClicked(props.id)}>
+      <div id="hoverElement" style={coffeeDivStyles} onClick = {() => props.whenCoffeeIsClicked(props.id)}>
         <img style={iconStyles} src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Antu_application-x-javascript.svg/64px-Antu_application-x-javascript.svg.png" alt="coffee bean icon"></img>
         <h3 style={coffeeElementStyles}>{props.name}</h3>
         <p style={coffeeElementStyles}>{props.origin} | {props.roast}</p>
