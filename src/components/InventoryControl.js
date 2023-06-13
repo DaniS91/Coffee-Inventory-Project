@@ -92,6 +92,13 @@ class InventoryControl extends React.Component {
     let currentState = null;
     let buttonText = null;
 
+    const mainButtonStyles = {
+      padding: '5px',
+      borderRadius: '5px',
+      border: '2px solid grey',
+      fontFamily: 'Segoe UI, Ubuntu, Helvetica, sans-serif'
+    }
+
     if (this.state.editing) {
       currentState = 
       <EditCoffeeForm 
@@ -117,7 +124,7 @@ class InventoryControl extends React.Component {
     return (
       <React.Fragment>
         {currentState}
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <button style={mainButtonStyles} onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   };

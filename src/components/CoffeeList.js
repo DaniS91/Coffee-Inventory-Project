@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function CoffeeList(props){
   return (
     <>
-    <hr/>
+    <h1>Our Coffees</h1>
     {props.coffeeList.map((coffee) =>
       <Coffee 
         whenCoffeeIsClicked = { props.onCoffeeSelection }
