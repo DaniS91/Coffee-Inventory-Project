@@ -4,6 +4,8 @@
 
 #### [Epicodus][Epicodus] project completed during [React][React] curriculum, after chapters on [React Fundamentals][React Fun]. Project is an application in React that tracks inventory for a coffee business.
 
+![Project Screenshot](./src/img/Screenshot.jpg)
+
 ## Technologies Used:
 * _Create-React-App_
 * _JSX_
