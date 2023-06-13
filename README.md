@@ -82,7 +82,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Image Attribution
 Photo by <a href="https://unsplash.com/@kittinskie?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tina Guina</a> on <a href="https://unsplash.com/photos/obV_LM0KjxY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+
+Bean Icon by <a href="https://commons.wikimedia.org/wiki/File:Antu_application-x-javascript.svg">	Fabián Alexis</a> on <a href="https://github.com/fabianalexisinostroza/Antu">Github</a>
   
 ## License
 

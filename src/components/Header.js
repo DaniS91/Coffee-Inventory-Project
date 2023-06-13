@@ -1,11 +1,11 @@
 import React from "react";
-import coffeePic from './../img/tina-guina-obV_LM0KjxY-unsplash.jpg'
+import coffeePic from './../img/tina-guina-unsplash.jpg'
 
 function Header(){
   const headerStyles = {
     backgroundImage: `url(${coffeePic})`,
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'fill',
+    backgroundSize: 'cover',
     backgroundPosition: 'center',
     height: '14vh',
     // width: '100vw',

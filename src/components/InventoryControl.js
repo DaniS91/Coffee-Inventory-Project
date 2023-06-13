@@ -98,6 +98,10 @@ class InventoryControl extends React.Component {
       border: '2px solid grey',
       fontFamily: 'Segoe UI, Ubuntu, Helvetica, sans-serif'
     }
+    const mainDivStyles= {
+      margin: '10px',
+      textAlign: 'center'
+    }
 
     if (this.state.editing) {
       currentState = 
@@ -123,8 +127,10 @@ class InventoryControl extends React.Component {
     }
     return (
       <React.Fragment>
+        <div style={mainDivStyles}>
         {currentState}
         <button style={mainButtonStyles} onClick={this.handleClick}>{buttonText}</button>
+        </div>
       </React.Fragment>
     );
   };

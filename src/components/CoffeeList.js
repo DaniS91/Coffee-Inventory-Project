@@ -3,9 +3,15 @@ import Coffee from "./Coffee";
 import PropTypes from "prop-types";
 
 function CoffeeList(props){
+  const coffeeListContainerStyles = {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  }
   return (
     <>
     <h1>Our Coffees</h1>
+    <div style={coffeeListContainerStyles}>
     {props.coffeeList.map((coffee) =>
       <Coffee 
         whenCoffeeIsClicked = { props.onCoffeeSelection }
@@ -17,6 +23,7 @@ function CoffeeList(props){
         id={coffee.id}
         key={coffee.id}/>
     )}
+    </div>
     </>
   );
 }

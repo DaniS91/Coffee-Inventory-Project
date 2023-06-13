@@ -3,6 +3,7 @@ import Header from "./Header";
 import InventoryControl from "./InventoryControl"
 
 function App(){
+  
   return (
     <React.Fragment>
       <Header />
