@@ -1,4 +1,4 @@
-# Bean Counter
+# Sweet Beans Coffee Inventory
 
 ### By Dani Steely
 
